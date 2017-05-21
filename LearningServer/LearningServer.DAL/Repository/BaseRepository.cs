@@ -4,6 +4,6 @@ namespace LearningServer.DAL.Repository
 {
     public class BaseRepository
     {
-        protected DatabaseModelDataContext Context = new DatabaseModelDataContext();
+        protected readonly DatabaseModelDataContext Context = new DatabaseModelDataContext();
     }
 }

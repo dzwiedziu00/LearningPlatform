@@ -95,7 +95,13 @@ namespace LearningServer.DAL.Database
 		
 		private int _UserId;
 		
+		private int _ExerciseLevel;
+		
+		private int _ExerciseNumber;
+		
 		private string _UserComment;
+		
+		private System.DateTime _CreationDate;
 		
 		private EntityRef<User> _User;
 		
@@ -107,8 +113,14 @@ namespace LearningServer.DAL.Database
     partial void OnIdChanged();
     partial void OnUserIdChanging(int value);
     partial void OnUserIdChanged();
+    partial void OnExerciseLevelChanging(int value);
+    partial void OnExerciseLevelChanged();
+    partial void OnExerciseNumberChanging(int value);
+    partial void OnExerciseNumberChanged();
     partial void OnUserCommentChanging(string value);
     partial void OnUserCommentChanged();
+    partial void OnCreationDateChanging(System.DateTime value);
+    partial void OnCreationDateChanged();
     #endregion
 		
 		public Comment()
@@ -117,7 +129,7 @@ namespace LearningServer.DAL.Database
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Id
 		{
 			get
@@ -161,7 +173,47 @@ namespace LearningServer.DAL.Database
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserComment", DbType="VarChar(2000)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExerciseLevel", DbType="Int NOT NULL")]
+		public int ExerciseLevel
+		{
+			get
+			{
+				return this._ExerciseLevel;
+			}
+			set
+			{
+				if ((this._ExerciseLevel != value))
+				{
+					this.OnExerciseLevelChanging(value);
+					this.SendPropertyChanging();
+					this._ExerciseLevel = value;
+					this.SendPropertyChanged("ExerciseLevel");
+					this.OnExerciseLevelChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ExerciseNumber", DbType="Int NOT NULL")]
+		public int ExerciseNumber
+		{
+			get
+			{
+				return this._ExerciseNumber;
+			}
+			set
+			{
+				if ((this._ExerciseNumber != value))
+				{
+					this.OnExerciseNumberChanging(value);
+					this.SendPropertyChanging();
+					this._ExerciseNumber = value;
+					this.SendPropertyChanged("ExerciseNumber");
+					this.OnExerciseNumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserComment", DbType="VarChar(2000) NOT NULL", CanBeNull=false)]
 		public string UserComment
 		{
 			get
@@ -177,6 +229,26 @@ namespace LearningServer.DAL.Database
 					this._UserComment = value;
 					this.SendPropertyChanged("UserComment");
 					this.OnUserCommentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreationDate", DbType="DateTime NOT NULL")]
+		public System.DateTime CreationDate
+		{
+			get
+			{
+				return this._CreationDate;
+			}
+			set
+			{
+				if ((this._CreationDate != value))
+				{
+					this.OnCreationDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreationDate = value;
+					this.SendPropertyChanged("CreationDate");
+					this.OnCreationDateChanged();
 				}
 			}
 		}
@@ -248,6 +320,10 @@ namespace LearningServer.DAL.Database
 		
 		private string _Password;
 		
+		private string _FullUserName;
+		
+		private System.DateTime _CreationDate;
+		
 		private EntitySet<Comment> _Comments;
 		
     #region Extensibility Method Definitions
@@ -260,6 +336,10 @@ namespace LearningServer.DAL.Database
     partial void OnUsernameChanged();
     partial void OnPasswordChanging(string value);
     partial void OnPasswordChanged();
+    partial void OnFullUserNameChanging(string value);
+    partial void OnFullUserNameChanged();
+    partial void OnCreationDateChanging(System.DateTime value);
+    partial void OnCreationDateChanged();
     #endregion
 		
 		public User()
@@ -324,6 +404,46 @@ namespace LearningServer.DAL.Database
 					this._Password = value;
 					this.SendPropertyChanged("Password");
 					this.OnPasswordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FullUserName", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string FullUserName
+		{
+			get
+			{
+				return this._FullUserName;
+			}
+			set
+			{
+				if ((this._FullUserName != value))
+				{
+					this.OnFullUserNameChanging(value);
+					this.SendPropertyChanging();
+					this._FullUserName = value;
+					this.SendPropertyChanged("FullUserName");
+					this.OnFullUserNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreationDate", DbType="DateTime NOT NULL")]
+		public System.DateTime CreationDate
+		{
+			get
+			{
+				return this._CreationDate;
+			}
+			set
+			{
+				if ((this._CreationDate != value))
+				{
+					this.OnCreationDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreationDate = value;
+					this.SendPropertyChanged("CreationDate");
+					this.OnCreationDateChanged();
 				}
 			}
 		}

@@ -1,5 +1,6 @@
 ﻿using LearningServer.ServiceInterface;
 using ServiceStack;
+using ServiceStack.Text;
 using System;
 
 namespace Server
@@ -14,11 +15,18 @@ namespace Server
             public AppHost()
               : base("HttpListener Self-Host", typeof(CommentsService).Assembly) { }
 
-            public override void Configure(Funq.Container container) { }
+            public override void Configure(Funq.Container container)
+            {
+                JsConfig<DateTime>.SerializeFn = time => new DateTime(time.Ticks, DateTimeKind.Local).ToString("o");
+                JsConfig<DateTime?>.SerializeFn =
+                    time => time != null ? new DateTime(time.Value.Ticks, DateTimeKind.Local).ToString("o") : null;
+                JsConfig.DateHandler = DateHandler.ISO8601;
+                JsConfig.IncludeNullValues = true;
+            }
         }
 
         /// <summary>
-        /// Main method with configuration for AppHost and database connection
+        /// Main method with configuration for AppHost
         /// </summary>
         /// <param name="args">Option to give URI address to host on</param>
         static void Main(string[] args)

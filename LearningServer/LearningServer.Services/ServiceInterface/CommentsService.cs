@@ -1,6 +1,7 @@
 ﻿using LearningServer.BL.Managers;
 using LearningServer.DAL.Dtos;
-using LearningServer.Services.ServiceModel;
+using LearningServer.DAL.Dtos.Extensions;
+using LearningServer.ServiceModel;
 using ServiceStack;
 using System.Collections.Generic;
 
@@ -18,6 +19,20 @@ namespace LearningServer.ServiceInterface
         public IEnumerable<UserCommentDto> Get(GetAllCommentsRequestDto dto)
         {
             return _commentsManager.AllComments();
+        }
+
+        public IEnumerable<UserCommentDto> Get(GetCommentsForExerciseRequestDto dto)
+        {
+            return _commentsManager.CommentsForExercise(dto.ExLevel, dto.ExNumber);
+        }
+
+        #endregion
+
+        #region Post
+
+        public void Post(PostNewCommentRequestDto dto)
+        {
+            _commentsManager.AddNewComment(dto.NewCommentToInsertDto());
         }
 
         #endregion

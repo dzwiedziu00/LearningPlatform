@@ -1,4 +1,6 @@
-﻿namespace LearningServer.DAL.Dtos
+﻿using System;
+
+namespace LearningServer.DAL.Dtos
 {
     /// <summary>
     /// Data transfer objcet for single user comment
@@ -17,5 +19,13 @@
         /// Content of comment
         /// </summary>
         public string Comment { get; set; }
+        /// <summary>
+        /// User name for other people
+        /// </summary>
+        public string FullUserName { get; set; }
+        /// <summary>
+        /// Date when comment was added by user
+        /// </summary>
+        public DateTime CreationDateOfComment { get; set; }
     }
 }
