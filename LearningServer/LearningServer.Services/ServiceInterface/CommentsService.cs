@@ -4,7 +4,7 @@ using LearningServer.Services.ServiceModel;
 using ServiceStack;
 using System.Collections.Generic;
 
-namespace LearningServer.Services.Services.ServiceInterface
+namespace LearningServer.ServiceInterface
 {
     /// <summary>
     /// ServiceStack web service implementation for comments.

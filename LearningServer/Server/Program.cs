@@ -1,4 +1,4 @@
-﻿using LearningServer.Services.Services.ServiceInterface;
+﻿using LearningServer.ServiceInterface;
 using ServiceStack;
 using System;
 
