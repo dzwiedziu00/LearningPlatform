@@ -1,7 +1,7 @@
 ﻿namespace LearningServer.DAL.Dtos
 {
     /// <summary>
-    /// Interface shared between RequestDto and more complete Dto for insert operation
+    /// Interface for new comment
     /// </summary>
     public interface INewCommentDto
     {

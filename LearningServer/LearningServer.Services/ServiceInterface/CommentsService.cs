@@ -1,6 +1,5 @@
 ﻿using LearningServer.BL.Managers;
 using LearningServer.DAL.Dtos;
-using LearningServer.DAL.Dtos.Extensions;
 using LearningServer.ServiceModel;
 using ServiceStack;
 using System.Collections.Generic;
@@ -32,7 +31,7 @@ namespace LearningServer.ServiceInterface
 
         public void Post(PostNewCommentRequestDto dto)
         {
-            _commentsManager.AddNewComment(dto.NewCommentToInsertDto());
+            _commentsManager.AddNewComment(dto);
         }
 
         #endregion

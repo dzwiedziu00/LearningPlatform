@@ -1,6 +1,5 @@
 ﻿using LearningServer.DAL.Dtos;
 using LearningServer.DAL.Repository;
-using System;
 using System.Collections.Generic;
 
 namespace LearningServer.BL.Managers
@@ -22,9 +21,8 @@ namespace LearningServer.BL.Managers
             return _commentsRepository.GetCommentsForExercise(exLevel, exNumber);
         }
 
-        public void AddNewComment(NewCommentForInsertDto dto)
+        public void AddNewComment(INewCommentDto dto)
         {
-            dto.CreationDate = DateTime.Now;
             _commentsRepository.InsertComment(dto);
         }
     }

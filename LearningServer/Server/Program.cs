@@ -13,7 +13,7 @@ namespace Server
         private class AppHost : AppSelfHostBase
         {
             public AppHost()
-              : base("HttpListener Self-Host", typeof(CommentsService).Assembly) { }
+              : base("HttpListener Self-Host", typeof(UsersService).Assembly) { }
 
             public override void Configure(Funq.Container container)
             {

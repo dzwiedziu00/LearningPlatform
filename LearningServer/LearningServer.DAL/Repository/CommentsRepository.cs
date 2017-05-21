@@ -1,5 +1,6 @@
 ﻿using LearningServer.DAL.Database;
 using LearningServer.DAL.Dtos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -34,11 +35,11 @@ namespace LearningServer.DAL.Repository
                     });
         }
 
-        public void InsertComment(NewCommentForInsertDto dto)
+        public void InsertComment(INewCommentDto dto)
         {
             Context.Comments.InsertOnSubmit(new Comment
             {
-                CreationDate = dto.CreationDate,
+                CreationDate = DateTime.Now,
                 ExerciseLevel = dto.ExerciseLevel,
                 ExerciseNumber = dto.ExerciseNumber,
                 UserId = dto.UserId,
