@@ -5,7 +5,7 @@ namespace LearningServer.DAL.Repository
     /// <summary>
     /// Base repository class with Context for connection to database
     /// </summary>
-    public class BaseRepository
+    public class RepositoryBase
     {
         protected readonly DatabaseModelDataContext Context = new DatabaseModelDataContext();
     }

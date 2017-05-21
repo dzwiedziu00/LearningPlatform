@@ -5,8 +5,14 @@ using System.Collections.Generic;
 
 namespace LearningServer.BL.Managers
 {
+    /// <summary>
+    /// Bussiness logic for users
+    /// </summary>
     public class UsersManager
     {
+        /// <summary>
+        /// Instance of repository
+        /// </summary>
         private readonly UsersRepository _usersRepository = new UsersRepository();
 
         public void AddNewUser(INewUserDto dto)

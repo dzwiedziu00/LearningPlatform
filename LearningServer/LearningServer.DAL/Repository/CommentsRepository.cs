@@ -6,7 +6,10 @@ using System.Linq;
 
 namespace LearningServer.DAL.Repository
 {
-    public class CommentsRepository : BaseRepository
+    /// <summary>
+    /// Repository connected only to comments table from database
+    /// </summary>
+    public class CommentsRepository : RepositoryBase
     {
         public IEnumerable<UserCommentDto> GetAll()
         {

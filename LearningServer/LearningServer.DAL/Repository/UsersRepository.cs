@@ -6,7 +6,10 @@ using System.Linq;
 
 namespace LearningServer.DAL.Repository
 {
-    public class UsersRepository : BaseRepository
+    /// <summary>
+    /// Repository connected only to users table from database
+    /// </summary>
+    public class UsersRepository : RepositoryBase
     {
         public void InsertNewUser(INewUserDto dto)
         {

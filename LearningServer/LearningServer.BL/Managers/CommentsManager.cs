@@ -5,10 +5,13 @@ using System.Collections.Generic;
 namespace LearningServer.BL.Managers
 {
     /// <summary>
-    /// Bussines logic class for Comments
+    /// Bussines logic class for comments
     /// </summary>
     public class CommentsManager
     {
+        /// <summary>
+        /// Instance of repository
+        /// </summary>
         private readonly CommentsRepository _commentsRepository = new CommentsRepository();
 
         public IEnumerable<UserCommentDto> AllComments()
