@@ -22,6 +22,7 @@ namespace Server
                     time => time != null ? new DateTime(time.Value.Ticks, DateTimeKind.Local).ToString("o") : null;
                 JsConfig.DateHandler = DateHandler.ISO8601;
                 JsConfig.IncludeNullValues = true;
+                Plugins.Add(new CorsFeature());
             }
         }
 

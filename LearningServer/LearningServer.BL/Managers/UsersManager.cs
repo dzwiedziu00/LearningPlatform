@@ -31,7 +31,10 @@ namespace LearningServer.BL.Managers
 
         public UserDto GetUserSession(string username, string password)
         {
-            return _usersRepository.GetUserForSession(username, password);
+            var result = _usersRepository.GetUserForSession(username, password);
+            if (result == null) throw new ArgumentException("Podany użytkownik nie istnieje");
+
+            return result;
         }
 
         public void AddPoint(int userId)
