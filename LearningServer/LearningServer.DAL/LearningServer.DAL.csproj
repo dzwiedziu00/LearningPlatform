@@ -87,6 +87,7 @@
     </Compile>
     <Compile Include="Dtos\INewCommentDto.cs" />
     <Compile Include="Dtos\NewUserDto.cs" />
+    <Compile Include="Dtos\UserRankingDto.cs" />
     <Compile Include="Dtos\UserCommentDto.cs" />
     <Compile Include="Dtos\UserDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,11 +98,12 @@
     </Compile>
     <Compile Include="Repository\RepositoryBase.cs" />
     <Compile Include="Repository\CommentsRepository.cs" />
-    <Compile Include="Repository\RankingsRepository.cs" />
     <Compile Include="Repository\UsersRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Database\DatabaseModel.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DatabaseModel.designer.cs</LastGenOutput>

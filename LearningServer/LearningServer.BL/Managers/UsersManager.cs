@@ -33,5 +33,15 @@ namespace LearningServer.BL.Managers
         {
             return _usersRepository.GetUserForSession(username, password);
         }
+
+        public void AddPoint(int userId)
+        {
+            _usersRepository.AddRankingPoint(userId);
+        }
+
+        public IEnumerable<UserRankingDto> UsersRanking()
+        {
+            return _usersRepository.GetUsersRanking();
+        }
     }
 }

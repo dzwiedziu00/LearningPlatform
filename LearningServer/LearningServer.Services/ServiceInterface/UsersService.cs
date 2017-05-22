@@ -22,6 +22,11 @@ namespace LearningServer.ServiceInterface
             return _usersManager.GetUserSession(dto.Username, dto.Password);
         }
 
+        public IEnumerable<UserRankingDto> Get(GetUsersRankingRequestDto dto)
+        {
+            return _usersManager.UsersRanking();
+        }
+
         #endregion
 
         #region Post
@@ -29,6 +34,11 @@ namespace LearningServer.ServiceInterface
         public void Post(PostNewUserRequestDto dto)
         {
             _usersManager.AddNewUser(dto);
+        }
+
+        public void Post(PostAddUserPointRequestDto dto)
+        {
+            _usersManager.AddPoint(dto.Id);
         }
 
         #endregion

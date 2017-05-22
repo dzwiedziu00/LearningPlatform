@@ -13,10 +13,15 @@ namespace LearningServer.ServiceModel
     }
 
     [Route("/users/{Username}/{Password}", "GET")]
-    public class GetUserSessionRequestDto : IReturn
+    public class GetUserSessionRequestDto : IReturn<UserDto>
     {
         public string Username { get; set; }
         public string Password { get; set; }
+    }
+
+    [Route("/users/ranking/getall", "GET")]
+    public class GetUsersRankingRequestDto : IReturn<IEnumerable<UserRankingDto>>
+    {
     }
 
     #endregion
@@ -29,6 +34,12 @@ namespace LearningServer.ServiceModel
         public string UserName { get; set; }
         public string Password { get; set; }
         public string FullUserName { get; set; }
+    }
+
+    [Route("/users/ranking/addpoint", "POST")]
+    public class PostAddUserPointRequestDto : IReturn
+    {
+        public int Id { get; set; }
     }
 
     #endregion

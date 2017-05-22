@@ -47,8 +47,36 @@ namespace LearningServer.DAL.Repository
                 {
                     Id = x.Id,
                     UserName = x.Username,
-                    FullUserName = x.FullUserName
+                    FullUserName = x.FullUserName,
+                    RankingPoints = x.RankingPoints
                 }).FirstOrDefault();
+        }
+
+        public void AddRankingPoint(int userId)
+        {
+            var user = Context.Users.FirstOrDefault(x => x.Id == userId);
+
+            if (user == null) throw new ArgumentException("User does not exist");
+
+            if (user.RankingPoints == null)
+            {
+                user.RankingPoints = 1;
+            }
+            else
+            {
+                user.RankingPoints = user.RankingPoints + 1;
+            }
+            Context.SubmitChanges();
+        }
+
+        public IEnumerable<UserRankingDto> GetUsersRanking()
+        {
+            return Context.Users.Select(x => new UserRankingDto
+            {
+                Id = x.Id,
+                FullUserName = x.FullUserName,
+                Score = x.RankingPoints
+            }).OrderByDescending(x => x.Score);
         }
     }
 }

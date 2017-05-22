@@ -14,5 +14,9 @@
         /// User name that is shown to other users or in session
         /// </summary>
         public string FullUserName { get; set; }
+        /// <summary>
+        /// All points that user collected
+        /// </summary>
+        public int? RankingPoints { get; set; }
     }
 }
