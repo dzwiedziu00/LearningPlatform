@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+      <?php header('Access-Control-Allow-Origin: *'); ?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Trenuj Matme - Learning Platform</title>
@@ -70,7 +71,23 @@
                           </div>
                       </div>
                       <div class="col-xs-12">
-                          <button type="button" class="btn btn-green btn-block btn-flat" onclick="userlogin()">Zaloguj</button>
+                          <button type="button" class="btn btn-green btn-block btn-flat" onclick="Submit()">Zaloguj</button>
+                          <script>
+                              function Submit(){
+                                  console.log('2');
+
+                                      var url = "http://localhost:8888/users/Test1/Test1?format=json"; // the script where you handle the form input.
+
+                                      $.ajax({
+                                          type: "GET",
+                                          url: url,
+                                          data: '', // serializes the form's elements.
+                                          success: function(data)
+                                          {
+                                              alert(data); // show response from the php script.
+                                          }
+                                      });
+                              }</script>
                       </div>
                   </div>
                 </form>
