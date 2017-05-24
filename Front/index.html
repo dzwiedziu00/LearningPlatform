@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Trenuj Matme - Learning Platform</title>
-    <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Candal|Alegreya+Sans">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
@@ -70,27 +69,7 @@
                           </div>
                       </div>
                       <div class="col-xs-12">
-                          <button type="button" class="btn btn-green btn-block btn-flat" onclick="Submit()">Zaloguj</button>
-                          <script>
-                              function Submit(){
-                                      let login = $('#loginid').val();
-                                      let passwd = $('#loginpsw').val();
-                                      console.log(login);
-                                      console.log(passwd);
-
-                                      var url = `http://localhost:8888/users/${login}/${passwd}`; // the script where you handle the form input.
-
-                                      $.ajax({
-                                          contentType: "application/json",
-                                          type: "GET",
-                                          url: url,
-                                          data: "", // serializes the form's elements.
-                                          success: function(data)
-                                          {
-                                              console.log(data); // show response from the php script.
-                                          }
-                                      });
-                              }</script>
+                          <button type="button" class="btn btn-green btn-block btn-flat" onclick="SubmitLogin($('#loginid').val(),$('#loginpsw').val())">Zaloguj</button>
                       </div>
                   </div>
                 </form>
@@ -130,7 +109,7 @@
     <script src="js/jquery.easing.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/custom.js"></script>
-    <script src="contactform/contactform.js"></script>
-    
+    <script src="js/learningScripts.js"></script>
+
   </body>
 </html>

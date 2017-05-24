@@ -32,7 +32,7 @@ namespace LearningServer.BL.Managers
         public UserDto GetUserSession(string username, string password)
         {
             var result = _usersRepository.GetUserForSession(username, password);
-            if (result == null) throw new ArgumentException("Podany użytkownik nie istnieje");
+            if (result == null) throw new ArgumentException("Niepoprawna nazwa użytkownika bądź hasło");
 
             return result;
         }
