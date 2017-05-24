@@ -5,7 +5,7 @@ function SubmitLogin(login, password){
         contentType: "application/json",
         type: "GET",
         url: url,
-        data: "", // serializes the form's elements.
+        data: "",
         success: function(data)
         {
             try{
