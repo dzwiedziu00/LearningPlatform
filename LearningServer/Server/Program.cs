@@ -40,7 +40,6 @@ namespace Server
             Console.WriteLine("AppHost Created at {0}, listening on {1}",
                 DateTime.Now, listeningOn);
 
-            Console.WriteLine("\nPress Space to exit...");
             Console.ReadKey();
         }
     }
