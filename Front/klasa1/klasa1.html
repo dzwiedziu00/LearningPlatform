@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Trenuj Matme - Learning Platform</title>
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Candal|Alegreya+Sans">
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/imagehover.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/imagehover.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
 
   </head>
   <body>
@@ -21,7 +21,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">Trenuj<span> Matme </span></a>
+        <a class="navbar-brand" href="../index.html">Trenuj<span> Matme </span></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
@@ -33,8 +33,8 @@
         </div>
       </div>
     </nav>
-    <!--/ Navigation bar-->
-    <!--Modal box-->
+
+      <!--Modal box-->
     <div class="modal fade" id="login" role="dialog">
       <div class="modal-dialog modal-sm">
       
@@ -90,12 +90,12 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title text-center form-title">Rejestracja</h4>
+            <h4 class="modal-title text-center form-title">Logowanie</h4>
           </div>
           <div class="modal-body padtrbl">
 
             <div class="login-box-body">
-              <p class="login-box-msg">Wypełnij pola aby utworzyć nowe konto</p>
+              <p class="login-box-msg">Zaloguj się aby uzyskać pełny dostęp</p>
               <div class="form-group">
                 <form name="" id="loginForm">
                  <div class="form-group has-feedback"> <!----- username -------------->
@@ -110,7 +110,14 @@
                   </div>
                   <div class="row">
                       <div class="col-xs-12">
-                          <button type="button" class="btn btn-green btn-block btn-flat">Zarejestruj</button>
+                          <div class="checkbox icheck">
+                              <label>
+                                <input type="checkbox" id="loginrem" > Zapamiętaj mnie
+                              </label>
+                          </div>
+                      </div>
+                      <div class="col-xs-12">
+                          <button type="button" class="btn btn-green btn-block btn-flat" onclick="SubmitLogin($('#loginid').val(),$('#loginpsw').val())">Zaloguj</button>
                       </div>
                   </div>
                 </form>
@@ -121,26 +128,3 @@
 
       </div>
     </div>
- 
-    <div class="banner">
-
-    </div>
-
-  <div class="klasy-box">
-      <div class="col-sm-4"><a href="klasa1/klasa1.html"><img class="klasa-img" src="img/klasa1.jpg" /></a></div>
-      <div class="col-sm-4"><a href="klasa2.html"><img class="klasa-img" src="img/klasa2.jpg" /></a></div>
-      <div class="col-sm-4"><a href="klasa3.html"><img class="klasa-img" src="img/klasa3.jpg" /></a></div>
-  </div>
-
-   
-       
-    
-    
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/custom.js"></script>
-    <script src="js/learningScripts.js"></script>
-
-  </body>
-</html>
