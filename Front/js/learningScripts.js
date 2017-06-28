@@ -27,20 +27,20 @@ function HandleError(error){
 }
 
 function SubmitRegister(userName, password, fullUserName){
-    let url = `/users/addnew`;
+    let url = `http://localhost:8888/users/addnew`;
 
     $.ajax({
         contentType: "application/json",
         type: "POST",
         url: url,
-        data: {
+        data: JSON.stringify({
             UserName: userName,
             Password: password,
             FullUserName: fullUserName
-        },
-        success: function(data)
+        }),
+        success: function()
         {
-                alert("Pomyślnie zalogowano");
+                alert("Pomyślnie zarejestrowano");
         },
         error: function(err){
             HandleError(err);
