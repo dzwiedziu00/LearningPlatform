@@ -52,20 +52,14 @@ namespace LearningServer.DAL.Repository
                 }).FirstOrDefault();
         }
 
-        public void AddRankingPoint(int userId)
+        public void AddRankingPoint(int userId, int points)
         {
             var user = Context.Users.FirstOrDefault(x => x.Id == userId);
 
             if (user == null) throw new ArgumentException("User does not exist");
 
-            if (user.RankingPoints == null)
-            {
-                user.RankingPoints = 1;
-            }
-            else
-            {
-                user.RankingPoints = user.RankingPoints + 1;
-            }
+            user.RankingPoints += points;
+
             Context.SubmitChanges();
         }
 

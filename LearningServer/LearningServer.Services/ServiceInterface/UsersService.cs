@@ -38,7 +38,7 @@ namespace LearningServer.ServiceInterface
 
         public void Post(PostAddUserPointRequestDto dto)
         {
-            _usersManager.AddPoint(dto.Id);
+            _usersManager.AddPoint(dto.Id, dto.Points);
         }
 
         #endregion

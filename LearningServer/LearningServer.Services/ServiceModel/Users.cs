@@ -40,6 +40,7 @@ namespace LearningServer.ServiceModel
     public class PostAddUserPointRequestDto : IReturn
     {
         public int Id { get; set; }
+        public int Points { get; set; }
     }
 
     #endregion

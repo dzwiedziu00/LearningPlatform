@@ -37,9 +37,9 @@ namespace LearningServer.BL.Managers
             return result;
         }
 
-        public void AddPoint(int userId)
+        public void AddPoint(int userId, int points)
         {
-            _usersRepository.AddRankingPoint(userId);
+            _usersRepository.AddRankingPoint(userId, points);
         }
 
         public IEnumerable<UserRankingDto> UsersRanking()

@@ -47,3 +47,28 @@ function SubmitRegister(userName, password, fullUserName){
         }
     });
 }
+
+function SubmitComment(exerciseLevel, exerciseNumber, commentText){
+    let url = `http://localhost:8888/comments/addnew`;
+
+    let userSession = JSON.parse(localStorage.getItem('userSession'));
+
+    $.ajax({
+        contentType: "application/json",
+        type: "POST",
+        url: url,
+        data: JSON.stringify({
+            UserId: userSession.Id,
+            ExerciseLevel: exerciseLevel,
+            ExerciseNumber: exerciseNumber,
+            CommentText: commentText
+        }),
+        success: function()
+        {
+            alert("Komentarz został dodany");
+        },
+        error: function(err){
+            HandleError(err);
+        }
+    });
+}

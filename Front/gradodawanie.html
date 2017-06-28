@@ -106,7 +106,7 @@
     Dodaj swój komentarz do gry
     </textarea>
     </div>
-    <input class="btn btn-danger center-block full-width" type="submit" value="Dodaj komentarz" id="submitComment">
+    <input class="btn btn-danger center-block full-width" type="submit" value="Dodaj komentarz" id="submitComment" onclick="SubmitComment(1, 1, document.getElementById('comments').value)"/>
     </form>
 </div>
 
@@ -125,6 +125,7 @@
             $('#sprawdzodp').click();
         }
     </script>
+    <script src="js/learningScripts.js"></script>
 </body>
 
 </html>
