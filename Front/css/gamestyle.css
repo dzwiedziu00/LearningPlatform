@@ -21,6 +21,12 @@ body {
     font-size: 18em;
     color: #fff;
 }
+
+.question2 {
+    font-family: 'Handlee', cursive;
+    font-size: 10em;
+    color: #fff;
+}
 .ikona {
     width: 50px;
     height: 50px;
@@ -73,3 +79,6 @@ body {
 .full-width {
     width: 90%;
 }
+
+.comments-area { width: 100%; height: 200px; resize: none; }
+.padding-div { height: 100px; }

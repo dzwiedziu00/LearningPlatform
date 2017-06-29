@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html ng-app>
+
+<head>
+    <title>Dodawanie</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/gamestyle.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Handlee' rel='stylesheet' type='text/css'>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-2.0.3.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!--Angular.js-->
+    <script src="js/angular.min.js"></script>
+    <script src="js/klasa1/controller11.js"></script>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Candal|Alegreya+Sans">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/imagehover.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body ng-init="reloadPage()" ng-controller="graDodawanie">
+<div class="padding-div"> </div>
+
+<script>
+
+    if (localStorage.getItem('userSession')===null)
+    {
+</script>
+      <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Trenuj<span> Matme </span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Ranking</a></li>
+          <li><a href="#">Informacje</a></li>
+          <li><a href="#" data-target="#register" data-toggle="modal">Rejestracja</a></li>
+          <li><a href="#" data-target="#login" data-toggle="modal">Zaloguj się</a></li>
+        </ul>
+        </div>
+      </div>
+    </nav>
+<script>    
+    }
+    else
+    {
+</script>
+      <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Trenuj<span> Matme </span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Ranking</a></li>
+          <li><a href="#">Informacje</a></li>
+          <li><a href="#">Witaj</a></li>
+          <li><a href="#">Wyloguj się</a></li>
+        </ul>
+        </div>
+      </div>
+    </nav>
+<script>
+    }
+</script>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 visible-xs">
+                <div class="game-title">
+                    <p class="text-center">{{gametitle}}</p>
+                </div>
+            </div>
+            <div class="col-sm-4 col-xs-6">
+                <img src="img/life.png" class="ikona life-lives" ng-repeat="a in zasieg(liczbaZyc) track by $index">
+            </div>
+            <div class="col-sm-4 hidden-xs">
+                <div class="game-title">
+                    <p class="text-center">{{gametitle}}</p>
+                </div>
+            </div>
+            <div class="col-sm-4 col-xs-6">
+                <div class="text-right reward-font">
+                    <img src="img/pkt.png" class="ikona">
+                    <span>{{liczbaPkt}}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="panel panel-default blackboard-outer">
+                <div class="panel-body blackboard">
+                    <div class="row text-center">
+                        <div class="col-sm-6">
+                            <img src="img/jablko.png" class="counting-object" ng-repeat="n in zasieg(n1) track by $index">
+                        </div>
+                        <div class="col-sm-6">
+                            <img src="img/jablko.png" class="counting-object" ng-repeat="n in zasieg(n2) track by $index">
+                        </div>
+                    </div>
+                    <p class="question2 text-center">Policz jabłka!</p>
+                </div>
+            </div>
+        </div>
+        <div class="container answer-row">
+            <div class="row">
+                <div class="col-sm-1 hidden-xs">
+                </div>
+                <div class="col-sm-6 col-xs-8">
+                    <input type="text" class="form-control" id="answer" placeholder="Tutaj podaj swoją odpowiedź" ng-model="userAnswer" x-webkit-speech onwebkitspeechchange="sprawdzOdp()">
+                </div>
+                <div class="col-sm-2 col-xs-4">
+                    <button class="btn btn-primary center-block full-width" ng-click="potwierdzOdpowiedz()" id="submitbutton">Potwierdź</button>
+                </div>
+                <div class="hidden">
+                    <button class="btn btn-primary" ng-click="sprawdzOdp()" id="sprawdzodp">Sprawdz Odpowiedz</button>
+                </div>
+                <div class="col-sm-2 hidden-xs">
+                    <button class="btn btn-danger center-block full-width" ng-click="pominPytanie()">Pomiń</button>
+                </div>
+                <div class="col-sm-1 hidden-xs">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Modals-->
+    <div class="modal fade" id="lost-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Twoje życia się skończyły! Gra skończona!</h4>
+                </div>
+                <div class="modal-body">
+                    <h2>Gra dobiegła końca. Twoja liczba punktów: {{liczbaPkt}}</h2>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="reloadPage()">Zamknij</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="reloadPage()">Zagraj jeszcze raz</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+
+<div class="col-sm-6 col-xs-8">
+    <form action="" method="post">
+    <div>
+    <textarea name="comments" id="comments" class="comments-area">
+    Dodaj swój komentarz do gry
+    </textarea>
+    </div>
+    <input class="btn btn-danger center-block full-width" type="submit" value="Dodaj komentarz" id="submitComment" onclick="SubmitComment(1, 1, document.getElementById('comments').value)"/>
+    </form>
+</div>
+
+
+
+
+
+    <script>
+        $("#answer").keyup(function(event) {
+            if (event.keyCode == 13) {
+                $("#submitbutton").click();
+            }
+        });
+
+        function sprawdzOdp() {
+            $('#sprawdzodp').click();
+        }
+    </script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/learningScripts.js"></script>
+</body>
+
+</html>

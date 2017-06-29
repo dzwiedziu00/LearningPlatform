@@ -12,8 +12,12 @@
 
   </head>
   <body class="klasa-bg">
-    <!--Navigation bar-->
-    <nav class="navbar navbar-default navbar-fixed-top">
+<script>
+
+    if (localStorage.getItem('userSession')===null)
+    {
+</script>
+      <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -33,6 +37,34 @@
         </div>
       </div>
     </nav>
+<script>    
+    }
+    else
+    {
+</script>
+      <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">Trenuj<span> Matme </span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Ranking</a></li>
+          <li><a href="#">Informacje</a></li>
+          <li><a href="#">Witaj</a></li>
+          <button onclick="cleanUp()" href="#">Wyloguj się</button>
+        </ul>
+        </div>
+      </div>
+    </nav>
+<script>
+    }
+</script>
 
       <!--Modal box-->
     <div class="modal fade" id="login" role="dialog">
@@ -135,4 +167,20 @@
     <h2>Zadania dla klasy 1</h2>
 
 
-    <a href="../gradodawanie.html">Dodaj do siebie dwie cyfry </a>
+    
+    <a href="../dodawanie11.html">Dodawanie liczb w zakresie 6</a>
+    <a href="../dodawanie12.html">Dodawanie liczb w zakresie 10</a>
+    <a href="../dodawanie13.html">Policz jabłka</a>
+    <a href="../dodawanie14.html">Odejmowanie w zakresie 6</a>
+    <a href="../dodawanie15.html">Odejmowanie w zakresie 10</a>
+
+
+      
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/learningScripts.js"></script>
+
+  </body>
+</html>

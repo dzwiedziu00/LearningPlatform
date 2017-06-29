@@ -10,7 +10,7 @@ function SubmitLogin(login, password){
         {
             try{
                 localStorage.setItem('userSession', JSON.stringify(data));
-                alert("Pomyślnie zalogowano");
+                window.location.href = "index.html";
             }catch(err) {
                 alert("Błąd logwania");
             }
@@ -40,7 +40,7 @@ function SubmitRegister(userName, password, fullUserName){
         }),
         success: function()
         {
-                alert("Pomyślnie zarejestrowano");
+                window.location.href = "succregister.html";
         },
         error: function(err){
             HandleError(err);
@@ -71,4 +71,8 @@ function SubmitComment(exerciseLevel, exerciseNumber, commentText){
             HandleError(err);
         }
     });
+}
+function cleanUp(){
+window.localStorage.clear();
+alert("wyczyszczono");
 }
