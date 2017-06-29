@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Trenuj Matme - Learning Platform</title>
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Candal|Alegreya+Sans">
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/imagehover.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/imagehover.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
 
   </head>
-  <body>
+  <body class="klasa-bg">
 <script>
 
     if (localStorage.getItem('userSession')===null)
@@ -25,7 +25,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html"><img src="img/logo.png" /></a>
+        <a class="navbar-brand" href="../index.html">Trenuj<span> Matme </span></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
@@ -50,7 +50,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html"><img src="img/logo.png" /></a>
+        <a class="navbar-brand" href="../index.html">Trenuj<span> Matme </span></a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
@@ -66,7 +66,7 @@
     }
 </script>
 
-    <!--Modal box-->
+      <!--Modal box-->
     <div class="modal fade" id="login" role="dialog">
       <div class="modal-dialog modal-sm">
       
@@ -101,7 +101,7 @@
                           </div>
                       </div>
                       <div class="col-xs-12">
-                          <button type="button" class="btn btn-green btn-block btn-flat" onclick="SubmitLogin($('#loginid').val(), $('#loginpsw').val())">Zaloguj</button>
+                          <button type="button" class="btn btn-green btn-block btn-flat" onclick="SubmitLogin($('#loginid').val(),$('#loginpsw').val())">Zaloguj</button>
                       </div>
                   </div>
                 </form>
@@ -114,7 +114,7 @@
     </div>
 
 
-       <!--Modal box-->
+     <!--Modal box-->
     <div class="modal fade" id="register" role="dialog">
       <div class="modal-dialog modal-sm">
       
@@ -147,7 +147,7 @@
                   </div>
                   <div class="row">
                       <div class="col-xs-12">
-                          <button type="button" class="btn btn-green btn-block btn-flat" onclick="SubmitRegister($('#registerid').val(), $('#registerpsw').val(), $('#nickid').val())">Zarejestruj</button>
+                          <button type="button" class="btn btn-green btn-block btn-flat">Zarejestruj</button>
                       </div>
                   </div>
                 </form>
@@ -158,21 +158,24 @@
 
       </div>
     </div>
- 
-    <div class="banner">
 
-    </div>
+<br /> <br />
+<br />
+<br />
 
-  <div class="klasy-box">
-      <div class="col-sm-4"><a href="klasa1/klasa1.html"><img class="klasa-img" src="img/klasa1.jpg" /></a></div>
-      <div class="col-sm-4"><a href="klasa2/klasa2.html"><img class="klasa-img" src="img/klasa2.jpg" /></a></div>
-      <div class="col-sm-4"><a href="klasa3/klasa3.html"><img class="klasa-img" src="img/klasa3.jpg" /></a></div>
-  </div>
 
-   
-       
+    <h2>Zadania dla klasy 2</h2>
+
+
     
-    
+    <a href="../dodawanie21.html">Dodawanie liczb w zakresie 30</a>
+    <a href="../dodawanie22.html">Dodawanie liczb w zakresie 50</a>
+    <a href="../dodawanie23.html">Policz marchewki</a>
+    <a href="../dodawanie24.html">Odejmowanie w zakresie 30</a>
+    <a href="../dodawanie25.html">Odejmowanie w zakresie 50</a>
+
+
+      
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.easing.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
