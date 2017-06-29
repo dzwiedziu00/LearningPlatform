@@ -77,3 +77,21 @@ function cleanUp(){
     localStorage.removeItem('userSession');
     alert("Wylogowano!");
 }
+
+function GetCommentsForGame(exerciseLevel, exerciseNumber){
+    let url = `http://localhost:8888/comments/${exerciseLevel}/${exerciseNumber}`;
+
+    $.ajax({
+        contentType: "application/json",
+        type: "GET",
+        url: url,
+        data: '',
+        success: function(data)
+        {
+            return data;
+        },
+        error: function(err){
+            HandleError(err);
+        }
+    });
+}
