@@ -12,59 +12,72 @@
 
   </head>
   <body class="klasa-bg">
-<script>
 
-    if (localStorage.getItem('userSession')===null)
-    {
-</script>
+  <div id="loginBar">
       <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="../index.html">Trenuj<span> Matme </span></a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Ranking</a></li>
-          <li><a href="#">Informacje</a></li>
-          <li><a href="#" data-target="#register" data-toggle="modal">Rejestracja</a></li>
-          <li><a href="#" data-target="#login" data-toggle="modal">Zaloguj się</a></li>
-        </ul>
-        </div>
-      </div>
-    </nav>
-<script>    
-    }
-    else
-    {
-</script>
+          <div class="container">
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="/Front/index.html">Trenuj<span> Matme </span></a>
+              </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                  <ul class="nav navbar-nav navbar-right">
+                      <li><a href="#">Ranking</a></li>
+                      <li><a href="#">Informacje</a></li>
+                      <li><a href="#" data-target="#register" data-toggle="modal">Rejestracja</a></li>
+                      <li><a href="#" data-target="#login" data-toggle="modal">Zaloguj się</a></li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+  </div>
+
+  <div id="loggedBar">
       <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="../index.html">Trenuj<span> Matme </span></a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Ranking</a></li>
-          <li><a href="#">Informacje</a></li>
-          <li><a href="#">Witaj</a></li>
-          <button onclick="cleanUp()" href="#">Wyloguj się</button>
-        </ul>
-        </div>
-      </div>
-    </nav>
-<script>
-    }
-</script>
+          <div class="container">
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="/Front/index.html">Trenuj<span> Matme </span></a>
+              </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                  <ul class="nav navbar-nav navbar-right">
+                      <li><a href="#">Ranking</a></li>
+                      <li><a href="#">Informacje</a></li>
+                      <li><a href="#">Witaj</a></li>
+                      <button onclick="cleanUp();loginBarFunction()" href="#">Wyloguj się</button>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+  </div>
+
+  <script>
+
+      function loginBarFunction() {
+          document.getElementById('loginBar').style.display = 'block';
+          document.getElementById('loggedBar').style.display = 'none';
+      }
+
+      if (localStorage.getItem('userSession')=== null)
+      {
+          document.getElementById('loginBar').style.display = 'block';
+          document.getElementById('loggedBar').style.display = 'none';
+      }
+      else
+      {
+          document.getElementById('loginBar').style.display = 'none';
+          document.getElementById('loggedBar').style.display = 'block';
+      }
+
+  </script>
 
       <!--Modal box-->
     <div class="modal fade" id="login" role="dialog">
@@ -174,13 +187,11 @@
     <a href="../dodawanie14.html">Odejmowanie w zakresie 6</a>
     <a href="../dodawanie15.html">Odejmowanie w zakresie 10</a>
 
-
-      
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/custom.js"></script>
-    <script src="js/learningScripts.js"></script>
+    <script src="/Front/js/jquery.min.js"></script>
+    <script src="/Front/js/jquery.easing.min.js"></script>
+    <script src="/Front/js/bootstrap.min.js"></script>
+    <script src="/Front/js/custom.js"></script>
+    <script src="/Front/js/learningScripts.js"></script>
 
   </body>
 </html>

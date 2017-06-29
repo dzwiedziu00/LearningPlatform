@@ -12,59 +12,73 @@
 
   </head>
   <body>
+
+  <div id="loginBar">
+      <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container">
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="index.html">Trenuj<span> Matme </span></a>
+              </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                  <ul class="nav navbar-nav navbar-right">
+                      <li><a href="#">Ranking</a></li>
+                      <li><a href="#">Informacje</a></li>
+                      <li><a href="#" data-target="#register" data-toggle="modal">Rejestracja</a></li>
+                      <li><a href="#" data-target="#login" data-toggle="modal">Zaloguj się</a></li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+  </div>
+
+  <div id="loggedBar">
+      <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container">
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="index.html">Trenuj<span> Matme </span></a>
+              </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                  <ul class="nav navbar-nav navbar-right">
+                      <li><a href="#">Ranking</a></li>
+                      <li><a href="#">Informacje</a></li>
+                      <li><a href="#">Witaj</a></li>
+                      <button onclick="cleanUp();loginBarFunction()" href="#">Wyloguj się</button>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+  </div>
+
 <script>
 
-    if (localStorage.getItem('userSession')===null)
-    {
-</script>
-      <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="index.html">Trenuj<span> Matme </span></a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Ranking</a></li>
-          <li><a href="#">Informacje</a></li>
-          <li><a href="#" data-target="#register" data-toggle="modal">Rejestracja</a></li>
-          <li><a href="#" data-target="#login" data-toggle="modal">Zaloguj się</a></li>
-        </ul>
-        </div>
-      </div>
-    </nav>
-<script>    
+    function loginBarFunction() {
+        document.getElementById('loginBar').style.display = 'block';
+        document.getElementById('loggedBar').style.display = 'none';
     }
-    else
-    {
+    
+        if (localStorage.getItem('userSession')=== null)
+        {
+            document.getElementById('loginBar').style.display = 'block';
+            document.getElementById('loggedBar').style.display = 'none';
+        }
+        else
+        {
+            document.getElementById('loginBar').style.display = 'none';
+            document.getElementById('loggedBar').style.display = 'block';
+        }
+
 </script>
-      <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="index.html">Trenuj<span> Matme </span></a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Ranking</a></li>
-          <li><a href="#">Informacje</a></li>
-          <li><a href="#">Witaj</a></li>
-          <button onclick="cleanUp()" href="#">Wyloguj się</button>
-        </ul>
-        </div>
-      </div>
-    </nav>
-<script>
-    }
-</script>
+
 
     <!--Modal box-->
     <div class="modal fade" id="login" role="dialog">

@@ -72,7 +72,8 @@ function SubmitComment(exerciseLevel, exerciseNumber, commentText){
         }
     });
 }
+
 function cleanUp(){
-window.localStorage.clear();
-alert("wyczyszczono");
+    localStorage.removeItem('userSession');
+    alert("Wylogowano!");
 }
