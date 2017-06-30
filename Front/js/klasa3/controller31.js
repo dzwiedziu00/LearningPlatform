@@ -1,6 +1,6 @@
 function graDodawanie($scope) {
     $scope.gametitle = "Wykonaj: ";
-    $scope.maxNumber = ;
+    $scope.maxNumber = 101 ;
     $scope.n1 = 0;
     $scope.n2 = 0;
     $scope.reloadPage = function () {

@@ -65,7 +65,8 @@ function SubmitComment(exerciseLevel, exerciseNumber, commentText){
         }),
         success: function()
         {
-            alert("Komentarz został dodany");
+            if(alert('Dziękujemy. Komentarz został dodany!')){}
+            else    window.location.reload(); 
         },
         error: function(err){
             HandleError(err);
@@ -75,7 +76,7 @@ function SubmitComment(exerciseLevel, exerciseNumber, commentText){
 
 function cleanUp(){
     localStorage.removeItem('userSession');
-    alert("Wylogowano!");
+    alert("Dziękujemy. Zostałeś pomyślnie wylogowany!");
 }
 
 function GetCommentsForGame(exerciseLevel, exerciseNumber){
@@ -97,9 +98,6 @@ function GetCommentsForGame(exerciseLevel, exerciseNumber){
     });
 }
 
-function test(){
-    alert(JSON.parse(localStorage.getItem('userSession')).FullUserName);
-}
 function GetRankings(){
     let url = `http://localhost:8888/users/ranking/getall`;
 
