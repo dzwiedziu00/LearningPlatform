@@ -97,6 +97,9 @@ function GetCommentsForGame(exerciseLevel, exerciseNumber){
     });
 }
 
+function test(){
+    alert(JSON.parse(localStorage.getItem('userSession')).FullUserName);
+}
 function GetRankings(){
     let url = `http://localhost:8888/users/ranking/getall`;
 

@@ -784,3 +784,4 @@ Responsive media queries
 
 .klasy-box { width: 100%; margin: 0 auto; text-align: center; }
 .klasa-img { max-width: 100%; height: auto; }
+.klasa-lista { list-style-type: disc; }
