@@ -12,8 +12,7 @@
 
   </head>
   <body class="klasa-bg">
-
-  <div id="loginBar">
+ <div id="loginBar">
       <nav class="navbar navbar-default navbar-fixed-top">
           <div class="container">
               <div class="navbar-header">
@@ -26,10 +25,9 @@
               </div>
               <div class="collapse navbar-collapse" id="myNavbar">
                   <ul class="nav navbar-nav navbar-right">
-                      <li><a href="index.html">Strona główna</a></li>
-                      <li><a href="ranking.html">Ranking</a></li>
+                      <li><a href="../index.html">Strona główna</a></li>
                       <li><a href="#" data-target="#register" data-toggle="modal">Rejestracja</a></li>
-                      <li><a href="#" data-target="#login" data-toggle="modal">Zaloguj się</a></li>
+                      <li><button class="btn btn-danger but-nav" data-target="#login" data-toggle="modal">Zaloguj się</button></li>
                   </ul>
               </div>
           </div>
@@ -49,10 +47,11 @@
               </div>
               <div class="collapse navbar-collapse" id="myNavbar">
                   <ul class="nav navbar-nav navbar-right">
-                      <li><a href="index.html">Strona główna</a></li>
-                      <li><a href="ranking.html">Ranking</a></li>
-                      <li><a onclick="test()" href="#">Witaj</a></li>
-                      <button onclick="cleanUp();loginBarFunction()" href="#">Wyloguj się</button>
+                      <li><a href="../index.html">Strona główna</a></li>
+                      <li class="usernick">Witaj<span> <script type="text/javascript">
+        document.write(JSON.parse(localStorage.getItem('userSession')).FullUserName);
+      </script></span>!</li>
+                      <li><button class="btn btn-danger but-nav" onclick="cleanUp();loginBarFunction()" href="#">Wyloguj się</button></li>
                   </ul>
               </div>
           </div>
@@ -78,7 +77,9 @@
         }
 
 </script>
-      <!--Modal box-->
+
+
+    <!--Modal box-->
     <div class="modal fade" id="login" role="dialog">
       <div class="modal-dialog modal-sm">
       
@@ -113,7 +114,7 @@
                           </div>
                       </div>
                       <div class="col-xs-12">
-                          <button type="button" class="btn btn-green btn-block btn-flat" onclick="SubmitLogin($('#loginid').val(),$('#loginpsw').val())">Zaloguj</button>
+                          <button type="button" class="btn btn-green btn-block btn-flat" onclick="SubmitLogin($('#loginid').val(), $('#loginpsw').val())">Zaloguj</button>
                       </div>
                   </div>
                 </form>
@@ -126,7 +127,7 @@
     </div>
 
 
-     <!--Modal box-->
+       <!--Modal box-->
     <div class="modal fade" id="register" role="dialog">
       <div class="modal-dialog modal-sm">
       
@@ -159,7 +160,7 @@
                   </div>
                   <div class="row">
                       <div class="col-xs-12">
-                          <button type="button" class="btn btn-green btn-block btn-flat">Zarejestruj</button>
+                          <button type="button" class="btn btn-green btn-block btn-flat" onclick="SubmitRegister($('#registerid').val(), $('#registerpsw').val(), $('#nickid').val())">Zarejestruj</button>
                       </div>
                   </div>
                 </form>
