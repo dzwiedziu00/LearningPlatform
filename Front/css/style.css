@@ -785,3 +785,13 @@ Responsive media queries
 .klasy-box { width: 100%; margin: 0 auto; text-align: center; }
 .klasa-img { max-width: 100%; height: auto; }
 .klasa-lista { list-style-type: disc; }
+.pull-left { float: left; margin-top: 15px; }
+.cont-margin { margin-top: 50px; }
+
+#list { background: #fff; }
+#list li { width: 95%; border-bottom: dotted 1px #717f86; margin-bottom: 30px; padding-bottom: 25px; font-size: 14px; }
+#list li span { font-weight: 700; display: block; font-size: 18px; }
+.my-header { padding: 60px 0 70px 40px; font-weight: 700; font-size: 24px; color: #d9534f; }
+.navbar-right { margin-top: 20px; }
+.but-nav { margin-top: 10px; }
+.info-com { color: #fff; font-size: 28px; font-weight: 700; }

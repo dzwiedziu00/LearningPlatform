@@ -22,12 +22,12 @@
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                   </button>
-                  <a class="navbar-brand" href="/Front/index.html">Trenuj<span> Matme </span></a>
+                  <div class="navbar-brand"><img src="../img/logo.png"></div>
               </div>
               <div class="collapse navbar-collapse" id="myNavbar">
                   <ul class="nav navbar-nav navbar-right">
-                      <li><a href="#">Ranking</a></li>
-                      <li><a href="#">Informacje</a></li>
+                      <li><a href="index.html">Strona główna</a></li>
+                      <li><a href="ranking.html">Ranking</a></li>
                       <li><a href="#" data-target="#register" data-toggle="modal">Rejestracja</a></li>
                       <li><a href="#" data-target="#login" data-toggle="modal">Zaloguj się</a></li>
                   </ul>
@@ -45,13 +45,13 @@
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                   </button>
-                  <a class="navbar-brand" href="/Front/index.html">Trenuj<span> Matme </span></a>
+                  <div class="navbar-brand"><img src="../img/logo.png"></div>
               </div>
               <div class="collapse navbar-collapse" id="myNavbar">
                   <ul class="nav navbar-nav navbar-right">
-                      <li><a href="#">Ranking</a></li>
-                      <li><a href="#">Informacje</a></li>
-                      <li><a href="#">Witaj</a></li>
+                      <li><a href="index.html">Strona główna</a></li>
+                      <li><a href="ranking.html">Ranking</a></li>
+                      <li><a onclick="test()" href="#">Witaj</a></li>
                       <button onclick="cleanUp();loginBarFunction()" href="#">Wyloguj się</button>
                   </ul>
               </div>
@@ -59,26 +59,25 @@
       </nav>
   </div>
 
-  <script>
+<script>
 
-      function loginBarFunction() {
-          document.getElementById('loginBar').style.display = 'block';
-          document.getElementById('loggedBar').style.display = 'none';
-      }
+    function loginBarFunction() {
+        document.getElementById('loginBar').style.display = 'block';
+        document.getElementById('loggedBar').style.display = 'none';
+    }
+    
+        if (localStorage.getItem('userSession')=== null)
+        {
+            document.getElementById('loginBar').style.display = 'block';
+            document.getElementById('loggedBar').style.display = 'none';
+        }
+        else
+        {
+            document.getElementById('loginBar').style.display = 'none';
+            document.getElementById('loggedBar').style.display = 'block';
+        }
 
-      if (localStorage.getItem('userSession')=== null)
-      {
-          document.getElementById('loginBar').style.display = 'block';
-          document.getElementById('loggedBar').style.display = 'none';
-      }
-      else
-      {
-          document.getElementById('loginBar').style.display = 'none';
-          document.getElementById('loggedBar').style.display = 'block';
-      }
-
-  </script>
-
+</script>
       <!--Modal box-->
     <div class="modal fade" id="login" role="dialog">
       <div class="modal-dialog modal-sm">
@@ -180,7 +179,7 @@
     
 
     <div class="col-xs-12">
-    <h2>Zadania dla klasy 1</h2>
+    <h2 class="my-header">Zadania dla klasy 1</h2>
       <ul class="klasa-lista">
         <li><a href="../dodawanie11.html">Dodawanie liczb w zakresie 6</a> </li>
         <li><a href="../dodawanie12.html">Dodawanie liczb w zakresie 10</a></li>

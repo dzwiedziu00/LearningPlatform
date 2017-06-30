@@ -26,60 +26,160 @@
 <body ng-init="reloadPage()" ng-controller="graDodawanie">
 <div class="padding-div"> </div>
 
+  <div id="loginBar">
+      <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container">
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <div class="navbar-brand"><img src="img/logo.png"></div>
+              </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                  <ul class="nav navbar-nav navbar-right">
+                      <li><a href="index.html">Strona główna</a></li>
+                      <li><a href="ranking.html">Ranking</a></li>
+                      <li><a href="#" data-target="#register" data-toggle="modal">Rejestracja</a></li>
+                      <li><a href="#" data-target="#login" data-toggle="modal">Zaloguj się</a></li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+  </div>
+
+  <div id="loggedBar">
+      <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container">
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <div class="navbar-brand"><img src="img/logo.png"></div>
+              </div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                  <ul class="nav navbar-nav navbar-right">
+                      <li><a href="index.html">Strona główna</a></li>
+                      <li><a href="ranking.html">Ranking</a></li>
+                      <li><a onclick="test()" href="#">Witaj</a></li>
+                      <button onclick="cleanUp();loginBarFunction()" href="#">Wyloguj się</button>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+  </div>
+
 <script>
 
-    if (localStorage.getItem('userSession')===null)
-    {
-</script>
-      <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="index.html">Trenuj<span> Matme </span></a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Ranking</a></li>
-          <li><a href="#">Informacje</a></li>
-          <li><a href="#" data-target="#register" data-toggle="modal">Rejestracja</a></li>
-          <li><a href="#" data-target="#login" data-toggle="modal">Zaloguj się</a></li>
-        </ul>
-        </div>
-      </div>
-    </nav>
-<script>    
+    function loginBarFunction() {
+        document.getElementById('loginBar').style.display = 'block';
+        document.getElementById('loggedBar').style.display = 'none';
     }
-    else
-    {
+    
+        if (localStorage.getItem('userSession')=== null)
+        {
+            document.getElementById('loginBar').style.display = 'block';
+            document.getElementById('loggedBar').style.display = 'none';
+        }
+        else
+        {
+            document.getElementById('loginBar').style.display = 'none';
+            document.getElementById('loggedBar').style.display = 'block';
+        }
+
 </script>
-      <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="index.html">Trenuj<span> Matme </span></a>
+
+<!--Modal box-->
+    <div class="modal fade" id="login" role="dialog">
+      <div class="modal-dialog modal-sm">
+      
+        <!-- Modal content no 1-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title text-center form-title">Logowanie</h4>
+          </div>
+          <div class="modal-body padtrbl">
+
+            <div class="login-box-body">
+              <p class="login-box-msg">Zaloguj się aby uzyskać pełny dostęp</p>
+              <div class="form-group">
+                <form name="" id="loginForm">
+                 <div class="form-group has-feedback"> <!----- username -------------->
+                      <input class="form-control" placeholder="Nazwa użytkownika"  id="loginid" type="text" autocomplete="off" /> 
+            <span style="display:none;font-weight:bold; position:absolute;color: red;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginid"></span><!---Alredy exists  ! -->
+                      <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                  </div>
+                  <div class="form-group has-feedback"><!----- password -------------->
+                      <input class="form-control" placeholder="Hasło" id="loginpsw" type="password" autocomplete="off" />
+            <span style="display:none;font-weight:bold; position:absolute;color: grey;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginpsw"></span><!---Alredy exists  ! -->
+                      <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                  </div>
+                  <div class="row">
+                      <div class="col-xs-12">
+                          <button type="button" class="btn btn-green btn-block btn-flat" onclick="SubmitLogin($('#loginid').val(), $('#loginpsw').val())">Zaloguj</button>
+                      </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Ranking</a></li>
-          <li><a href="#">Informacje</a></li>
-          <li><a href="#">Witaj</a></li>
-          <li><a href="#">Wyloguj się</a></li>
-        </ul>
-        </div>
+
       </div>
-    </nav>
-<script>
-    }
-</script>
-    <div class="container">
+    </div>
+
+
+       <!--Modal box-->
+    <div class="modal fade" id="register" role="dialog">
+      <div class="modal-dialog modal-sm">
+      
+        <!-- Modal content no 1-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title text-center form-title">Rejestracja</h4>
+          </div>
+          <div class="modal-body padtrbl">
+
+            <div class="login-box-body">
+              <p class="login-box-msg">Wypełnij pola aby utworzyć nowe konto</p>
+              <div class="form-group">
+                <form name="" id="loginForm">
+                 <div class="form-group has-feedback"> <!----- username -------------->
+                      <input class="form-control" placeholder="Nazwa użytkownika"  id="registerid" type="text" autocomplete="off" /> 
+            <span style="display:none;font-weight:bold; position:absolute;color: red;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginid"></span><!---Alredy exists  ! -->
+                      <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                  </div>
+                  <div class="form-group has-feedback"> <!----- username -------------->
+                      <input class="form-control" placeholder="Nick widoczny dla innych"  id="nickid" type="text" autocomplete="off" /> 
+            <span style="display:none;font-weight:bold; position:absolute;color: red;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginid"></span><!---Alredy exists  ! -->
+                      <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                  </div>
+                  <div class="form-group has-feedback"><!----- password -------------->
+                      <input class="form-control" placeholder="Hasło" id="registerpsw" type="password" autocomplete="off" />
+            <span style="display:none;font-weight:bold; position:absolute;color: grey;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginpsw"></span><!---Alredy exists  ! -->
+                      <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                  </div>
+                  <div class="row">
+                      <div class="col-xs-12">
+                          <button type="button" class="btn btn-green btn-block btn-flat" onclick="SubmitRegister($('#registerid').val(), $('#registerpsw').val(), $('#nickid').val())">Zarejestruj</button>
+                      </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+<div class="container">
         <div class="row">
             <div class="col-xs-12 visible-xs">
                 <div class="game-title">
@@ -105,7 +205,7 @@
         <div class="container">
             <div class="panel panel-default blackboard-outer">
                 <div class="panel-body blackboard">
-                    <p class="question3 text-center">{{question}}</p>
+                    <p class="question text-center">{{question}}</p>
                 </div>
             </div>
         </div>
@@ -151,21 +251,84 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
-
-<div class="col-sm-6 col-xs-8">
-    <form action="" method="post">
-    <div>
-    <textarea name="comments" id="comments" class="comments-area">
-    Dodaj swój komentarz do gry
-    </textarea>
+<div class="container cont-margin" id="addcomm">
+    <div class="row answer-row">
+        <div class="col-sm-9">
+            <form action="" method="post">
+            <div>
+            <textarea placeholder="Dodaj swój komentarz" name="comments" id="comments" class="comments-area"></textarea>
+            </div>
+            <input class="btn btn-danger pull-left" type="submit" value="Dodaj komentarz" id="submitComment" onclick="SubmitComment(3, 2, document.getElementById('comments').value)"/>
+            </form>
+        </div>
     </div>
-    <input class="btn btn-danger center-block full-width" type="submit" value="Dodaj komentarz" id="submitComment" onclick="SubmitComment(1, 1, document.getElementById('comments').value)"/>
-    </form>
+</div>
+
+<div class="container cont-margin" id="infocomm">
+    <div class="row answer-row">
+        <div class="col-sm-9">
+          <h2 class="info-com">Aby dodać komentarz musisz być zalogowany!</h2>
+        </div>
+    </div>
 </div>
 
 
+<div class="container cont-margin">
+    <div class="row">
+        <div class="col-sm" id="list">
+
+        <h2 class="my-header">Komentarze użytkowników</h2>
+
+        <script>
+
+        $( document ).ready(function() {
+            let items = GetCommentsForGame(3,2).responseJSON;
+
+            let listDiv = document.getElementById('list');
+            let ul=document.createElement('ul');
+            for (let i = 0; i < items.length; ++i) {
+                let li=document.createElement('li');
+                let nick=document.createElement('h2');
+                let comment=document.createElement('p');
+                li.innerHTML = '<span>' + items[i].FullUserName + '</span>' + '<br />' + items[i].Comment;
+                ul.appendChild(li);
+            }
+            listDiv.appendChild(ul);
+});
 
 
+
+        </script>
+
+
+
+        </div>
+    </div>
+
+</div>
+
+        <script>
+
+
+        $( document ).ready(function() {
+        document.getElementById('addcomm').style.display = 'none';
+        document.getElementById('infocomm').style.display = 'block';
+    
+
+         if (localStorage.getItem('userSession')=== null)
+        {
+        document.getElementById('addcomm').style.display = 'none';
+        document.getElementById('infocomm').style.display = 'block';
+        }
+        else
+        {
+        document.getElementById('addcomm').style.display = 'block';
+        document.getElementById('infocomm').style.display = 'none';
+        }
+});
+
+
+</script>
 
     <script>
         $("#answer").keyup(function(event) {
@@ -177,11 +340,13 @@
         function sprawdzOdp() {
             $('#sprawdzodp').click();
         }
+
+
+
     </script>
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.easing.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/custom.js"></script>
     <script src="js/learningScripts.js"></script>
 </body>
 
