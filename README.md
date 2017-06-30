@@ -25,3 +25,4 @@ FUNKCJONALNOŚCI PLATFORMY
 6. Gry edukacyjne poprzez pomnożenie odpowiednich obiektów
 7. Dodatkowe funkcjonalności dla zalogowanych użytkowników
 8. Zberanie punktów podczas wykonywania zadania
+9. Pobieranie zestawów zadań
