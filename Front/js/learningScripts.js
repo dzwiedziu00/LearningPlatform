@@ -81,11 +81,31 @@ function cleanUp(){
 function GetCommentsForGame(exerciseLevel, exerciseNumber){
     let url = `http://localhost:8888/comments/${exerciseLevel}/${exerciseNumber}`;
 
-    $.ajax({
+    return $.ajax({
         contentType: "application/json",
         type: "GET",
         url: url,
         data: '',
+        async: false,
+        success: function(data)
+        {
+            return data;
+        },
+        error: function(err){
+            HandleError(err);
+        }
+    });
+}
+
+function GetRankings(){
+    let url = `http://localhost:8888/users/ranking/getall`;
+
+    return $.ajax({
+        contentType: "application/json",
+        type: "GET",
+        url: url,
+        data: '',
+        async: false,
         success: function(data)
         {
             return data;

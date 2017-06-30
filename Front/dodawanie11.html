@@ -90,9 +90,7 @@
         document.getElementById('loggedBar').style.display = 'block';
     }
 
-</script>
-
-<div class="container">
+</script>    <div class="container">
         <div class="row">
             <div class="col-xs-12 visible-xs">
                 <div class="game-title">
@@ -172,11 +170,13 @@
     Dodaj swój komentarz do gry
     </textarea>
     </div>
-    <input class="btn btn-danger center-block full-width" type="submit" value="Dodaj komentarz" id="submitComment" onclick="SubmitComment(1, 1, document.getElementById('comments').value);GetCommentsForGame(1,1)"/>
+    <input class="btn btn-danger center-block full-width" type="submit" value="Dodaj komentarz" id="submitComment" onclick="SubmitComment(1, 1, document.getElementById('comments').value); getCommentList()"/>
     </form>
 </div>
 
+<div class="col-lg-12" id="list">
 
+</div>
 
 
 
@@ -190,6 +190,20 @@
         function sprawdzOdp() {
             $('#sprawdzodp').click();
         }
+
+        function getCommentList(){
+            let items = GetCommentsForGame(1,1).responseJSON;
+
+            let listDiv = document.getElementById('list');
+            let ul=document.createElement('ul');
+            for (let i = 0; i < items.length; ++i) {
+                let li=document.createElement('li');
+                li.innerHTML = items[i].Comment + items[i].FullUserName;
+                ul.appendChild(li);
+            }
+            listDiv.appendChild(ul);
+        }
+
     </script>
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.easing.min.js"></script>
