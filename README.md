@@ -1,37 +1,30 @@
-## Welcome to GitHub Pages
+Platforma e-learningowa TRENUJ MATME!
+=============================================================================
 
-You can use the [editor on GitHub](https://github.com/dzwiedziu00/LearningPlatform/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+URUCHOMIENIE
+==================
+Aby urochomić aplikację lokalnie należy:
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+1. Run `git clone https://github.com/dzwiedziu00/LearningPlatform.git`
+2. Rozpakować zawartośc pliku Debug.zip - jest to nasz serwer działający na localhoscie
+3. Uruchomić plik index.html i cieszyć się platofrmą!
 
-### Markdown
+OPIS PLATFORMY
+==================
+Platforma ma charakter edukacyjny dla klas szkół podstawowych 1-3. Użytkownik podnosi swoje umiejętności w dziedzinie matematyki poprzez wykonywanie działań na określonym zakresie liczbowym.
+Dodatkowo poprzez wykonywanie zadania użytkownik zbiera punkty.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+FUNKCJONALNOŚCI PLATFORMY
+====================================
 
-```markdown
-Syntax highlighted code block
+1. Rejestracja użytkowników
+2. Logowanie użytkowników
+3. Gry edukacyjne poprzez dodawanie lczb
+4. Gry edukacyjne poprzez mnożenie liczb
+5. Gry edukacyjne poprzez policzenie odpowiednich obiektów
+6. Gry edukacyjne poprzez pomnożenie odpowiednich obiektów
+7. Dodatkowe funkcjonalności dla zalogowanych użytkowników
+8. Zberanie punktów podczas wykonywania zadania
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/dzwiedziu00/LearningPlatform/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
